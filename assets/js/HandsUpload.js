@@ -2,6 +2,7 @@ let uploadHandsObj = document.getElementById("upload-hands");
 let handsDialogObj = document.getElementById("hands-dialog");
 let uploadStatusObj = document.getElementById("upload-status");
 let calPlayer1Object= document.getElementById("cal-player1");
+let winsCountObj = document.getElementById("wins-count");
 const mimeTypes = [ 'text/plain' ];
 const maxFileSize = 2*1024*1024;
 
@@ -29,7 +30,7 @@ function sendHandsToServer(file){
     request.onreadystatechange = function(){
         if(request.readyState === 4 && request.status === 200) {
             uploadStatusObj.innerHTML = `Upload successful: file name is ${request.response.data.fileName} `;
-            calPlayer1Object.style.display = "block";
+            calPlayer1Object.style.display = "inline";
 
         }
     }
@@ -58,6 +59,7 @@ calPlayer1Object.addEventListener("click", () => {
     request.send();
     request.onreadystatechange = function(){
         if(request.readyState === 4 && request.status === 200) {
+            winsCountObj.innerHTML = ` Player 1 made ${request.response.data.wins}`;
             console.log(request.response);
         }
     }

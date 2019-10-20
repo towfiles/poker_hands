@@ -34,4 +34,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/poker, roles: ROLE_ADMIN }
+         - { path: ^/upload-hands, roles: ROLE_ADMIN }
+         - { path: ^/player1-wins, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
