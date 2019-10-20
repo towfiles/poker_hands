@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokerController!{% endblock %}
+
+{% block body %}
+{{ include('components/_navbar.html.twig') }}
+<body class="d-flex flex-column">
+    <div id="page-content">
+        <form enctype="multipart/form-data" method="post">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <h1 class="font-weight-light mt-4 text-white">Poker Hands Web Game</h1>
+                    <p class="lead text-white-50">Please Upload your hands file in the correct txt format below and we will provide you the winner</p>
+                    <input hidden  type="file" name="file" id="hands-dialog" />
+                    <button id="upload-hands" type="button" class="btn btn-success btn-lg">Upload Hands!</button>
+                    <br>
+                    <div id="upload-status"> </div>
+                    <br>
+                    <button id="cal-player1" type="button" class="btn btn-success btn-lg">Calculate Player 1 Wins</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Tobi Owolawi</small>
+        </div>
+    </footer>
+</body>
+{% endblock %}
